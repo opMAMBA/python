@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from discord.ext import commands
 import discord
 import config
@@ -11,9 +9,8 @@ class Bot(commands.Bot):
         super().__init__(command_prefix=commands.when_mentioned_or('.'), intents=intents, **kwargs)
 
     async def setup_hook(self):
-        node: wavelink.Node = wavelink.Node(uri='http://l1.devamop.in:80', password='DevamOP')
-        node1: wavelink.Node = wavelink.Node(uri='https://l1.devamop.in:443', password='DevamOP',secure=True)
-        await wavelink.NodePool.connect(client=self,nodes=[node,node1])
+        node: wavelink.Node = wavelink.Node(uri='http://n1.ll.darrennathanael.com:2269', password='glasshost1984')
+        await wavelink.NodePool.connect(client=self,nodes=[node])
         for cog in EXTENSIONS:
             try:
                 await self.load_extension(cog)
